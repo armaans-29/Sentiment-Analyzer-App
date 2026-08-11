@@ -1,11 +1,11 @@
 # Sentiment Analyzer
 check it out here !!   https://goods-sentiment-analyzer.streamlit.app/
 
-A Streamlit app that takes any CSV containing customer reviews or star ratings and automatically determines overall sentiment — no manual column selection needed. Built with Python, NLTK (VADER), and WordCloud.
+A Streamlit app that takes any CSV containing customer reviews or star ratings and automatically determines overall sentiment no manual column selection needed. Built with Python, NLTK (VADER), and WordCloud.
 
 ## What it does
 
-Upload a CSV and the app:
+Upload a CSV and the app will do the following tasks:
 
 - Auto-detects whether the file has a text review column or a numeric rating column
 - If text reviews are found, runs VADER sentiment analysis on each row to get positive/negative/neutral scores
