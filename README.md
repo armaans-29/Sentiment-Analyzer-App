@@ -22,7 +22,7 @@ Column names are normalized (lowercased, spaces → underscores) and matched aga
 - Review text: `review`, `reviews`, `review_text`, `comment`, `feedback`, `text`, `verified_reviews`
 - Rating: `rating`, `ratings`, `stars`, `review_rating`, `product_rating`
 
-If no header matches, the app falls back to heuristics — the longest average-length text column for reviews, or a numeric column bounded between 0 and 5 for ratings.
+If no header matches, the app falls back to heuristics the longest average-length text column for reviews, or a numeric column bounded between 0 and 5 for ratings.
 
 **Text-based sentiment**
 Each review is scored with NLTK's VADER `SentimentIntensityAnalyzer`, which returns positive, negative, and neutral polarity scores per row. These are summed across the dataset to determine the overall sentiment label.
@@ -47,10 +47,7 @@ When there's no review text, ratings are bucketed into sentiment classes:
 
 ## Running it locally
 
-```bash
-git clone https://github.com/<your-username>/csv-sentiment-analyzer.git
-cd csv-sentiment-analyzer
-
+```
 pip install streamlit pandas nltk wordcloud matplotlib
 streamlit run app.py
 ```
@@ -76,7 +73,7 @@ Both UTF-8 and Latin-1 encoded files are supported, with automatic fallback if U
 
 ## Limitations
 
-- VADER is a lexicon-based sentiment tool tuned for short, informal text (like reviews and social posts) — it may misjudge sarcasm, domain-specific jargon, or very long-form text
+- VADER is a lexicon-based sentiment tool tuned for short, informal text (like reviews and social posts) it may misjudge sarcasm, domain-specific jargon, or very long-form text
 - The rating-based fallback uses fixed thresholds (4.2 / 4.5) that were chosen as reasonable defaults, not derived from a specific dataset
 - Word cloud and top review sections only appear when actual review text is available, not in ratings-only mode
 
